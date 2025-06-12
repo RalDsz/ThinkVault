@@ -20,7 +20,7 @@ const CreatePage = () => {
     }
     setLoading(true)
     try {
-      await axios.post('http://localhost:5173/api/notes', {
+      await axios.post('https://thinkvault-backend-aqfg.onrender.com/api/notes', {
         title,
         content,
       })
