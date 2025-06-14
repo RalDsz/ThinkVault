@@ -11,7 +11,7 @@ const Notecard = ({ note, setNotes }) => {
   const handleDelete = async () => {
     setDeleting(true)
     try {
-      const res = await fetch(`https://thinkvault-backend-aqfg.onrender.com/api/notes/${note._id}`, {
+      const res = await fetch(` http://localhost:5001/api/notes/${note._id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })

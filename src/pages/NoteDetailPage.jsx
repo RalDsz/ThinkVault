@@ -17,7 +17,7 @@ const NoteDetailPage = () => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const res = await fetch(`https://thinkvault-backend-aqfg.onrender.com/api/notes/${id}`);
+        const res = await fetch(` http://localhost:5001/api/notes/${id}`);
         if (!res.ok) {
           throw new Error("Failed to fetch note");
         }
@@ -36,7 +36,7 @@ const NoteDetailPage = () => {
   const handleDelete = async () => {
     setDeleting(true);
     try {
-      const res = await fetch(`https://thinkvault-backend-aqfg.onrender.com/api/notes/${note._id}`, {
+      const res = await fetch(` http://localhost:5001/api/notes/${note._id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" }
       });
@@ -59,7 +59,7 @@ const NoteDetailPage = () => {
   const handleSave = async () => {
     setSaving(true);
     try {
-      const res = await fetch(`https://thinkvault-backend-aqfg.onrender.com/api/notes/${note._id}`, {
+      const res = await fetch(` http://localhost:5001/api/notes/${note._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -122,7 +122,7 @@ const NoteDetailPage = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between mb-6">
-            <Link to="/" className="btn btn-ghost">
+            <Link to="/home" className="btn btn-ghost">
               <ArrowLeftIcon className="w-6 h-6" />
               Back to Home
             </Link>
